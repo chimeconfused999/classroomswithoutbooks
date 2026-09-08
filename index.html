@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>#ClassroomsWithoutBooks — Education for Rural India</title>
+<meta name="description" content="A student-led campaign providing books, supplies, and weekly tutoring to children in rural India.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Kalam:wght@400;700&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F5EFDF;
+    --paper-dim:#EDE4CF;
+    --ink:#22303F;
+    --ink-soft:#425264;
+    --marigold:#E29A2E;
+    --marigold-deep:#C97F1B;
+    --indigo:#3E4E8C;
+    --rule-red:#B23A2E;
+    --slate:#232F30;
+    --slate-soft:#2E3B3C;
+    --line-blue:rgba(62,78,140,0.16);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Work Sans', sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{ font-family:'Fraunces', serif; color:var(--ink); font-weight:600; line-height:1.15; }
+  .hand{ font-family:'Kalam', cursive; }
+  .mono{ font-family:'IBM Plex Mono', monospace; }
+  a{ color:inherit; }
+  section{ position:relative; padding:5rem 1.5rem; }
+  .wrap{ max-width:880px; margin:0 auto; }
+  .ruled{
+    background-image: repeating-linear-gradient(
+      to bottom, transparent, transparent 41px, var(--line-blue) 42px
+    );
+  }
+  .margin-rule{
+    position:relative;
+    padding-left:2.2rem;
+    border-left:2px solid var(--rule-red);
+  }
+  @media (max-width:640px){ .margin-rule{ padding-left:1.2rem; } }
+
+  /* torn edge */
+  .torn-top{
+    position:relative;
+  }
+  .torn-top::before{
+    content:"";
+    position:absolute; top:0; left:0; right:0; height:14px;
+    background:inherit;
+    clip-path: polygon(0% 0%,3% 100%,7% 20%,11% 100%,15% 15%,19% 100%,23% 10%,27% 100%,31% 20%,35% 100%,39% 5%,43% 100%,47% 25%,51% 100%,55% 10%,59% 100%,63% 20%,67% 100%,71% 5%,75% 100%,79% 15%,83% 100%,87% 10%,91% 100%,95% 20%,100% 0%);
+  }
+
+  /* HERO */
+  .hero{
+    background:var(--paper);
+    padding-top:4rem;
+    overflow:hidden;
+  }
+  .notebook{
+    background:var(--paper-dim);
+    border:1px solid rgba(34,48,63,0.12);
+    border-radius:2px;
+    box-shadow:0 24px 60px -30px rgba(34,48,63,0.35);
+    padding:3rem 2.5rem 3.5rem;
+    position:relative;
+  }
+  .notebook::after{
+    content:"";
+    position:absolute; left:0; top:0; bottom:0; width:1px;
+    background:transparent;
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.75rem; letter-spacing:0.14em; text-transform:uppercase;
+    color:var(--rule-red); margin-bottom:1rem; display:inline-block;
+  }
+  .hero h1{ font-size:clamp(2.1rem, 5vw, 3.4rem); max-width:14ch; }
+  .hero .lede{
+    margin-top:1.4rem; max-width:52ch; color:var(--ink-soft); font-size:1.08rem;
+  }
+  .margin-note{
+    font-family:'Kalam', cursive;
+    color:var(--marigold-deep);
+    font-size:1.05rem;
+    margin-top:2.2rem;
+    transform:rotate(-1.2deg);
+    display:inline-block;
+  }
+  .stat-row{
+    display:flex; gap:2.4rem; flex-wrap:wrap; margin-top:2.6rem;
+    border-top:1px solid rgba(34,48,63,0.14); padding-top:1.8rem;
+  }
+  .stat{ min-width:120px; }
+  .stat .num{ font-family:'IBM Plex Mono', monospace; font-size:1.9rem; font-weight:600; color:var(--indigo); }
+  .stat .label{ font-size:0.82rem; color:var(--ink-soft); max-width:16ch; }
+
+  /* STORY */
+  .story{ background:var(--paper); }
+  .story blockquote{
+    font-family:'Kalam', cursive;
+    font-size:1.35rem;
+    color:var(--ink);
+    max-width:38ch;
+    margin:1.6rem 0 0;
+    transform:rotate(-0.6deg);
+  }
+  .story .cite{ margin-top:0.9rem; font-family:'IBM Plex Mono',monospace; font-size:0.78rem; color:var(--ink-soft); }
+
+  /* DATA */
+  .data{ background:var(--paper-dim); }
+  .data-grid{
+    display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+    gap:1.2rem; margin-top:2.2rem;
+  }
+  .data-card{
+    background:var(--paper); border:1px solid rgba(34,48,63,0.1);
+    padding:1.6rem 1.4rem; position:relative;
+  }
+  .data-card .num{ font-family:'IBM Plex Mono',monospace; font-size:2.1rem; font-weight:600; color:var(--rule-red); }
+  .data-card .desc{ margin-top:0.5rem; font-size:0.92rem; color:var(--ink-soft); }
+  .data-card .src{ margin-top:0.8rem; font-size:0.72rem; color:var(--ink-soft); opacity:0.7; }
+
+  /* CAUSES */
+  .causes ul{ list-style:none; margin-top:1.8rem; display:grid; gap:1.1rem; }
+  .causes li{ padding-left:1.4rem; position:relative; color:var(--ink-soft); }
+  .causes li::before{ content:"—"; position:absolute; left:0; color:var(--indigo); }
+  .causes li b{ color:var(--ink); }
+
+  /* REFLECTION - dark */
+  .reflection{
+    background:var(--slate); color:#EDE4CF;
+  }
+  .reflection h2{ color:#F5EFDF; }
+  .reflection p{ color:#C9D2CF; max-width:58ch; }
+  .reflection .hand{ color:var(--marigold); font-size:1.3rem; margin-top:1.6rem; display:block; max-width:42ch; }
+
+  /* ACTIONS */
+  .actions{ background:var(--paper); }
+  .action-grid{ display:grid; grid-template-columns:1fr 1fr; gap:1.4rem; margin-top:2rem; }
+  @media(max-width:700px){ .action-grid{ grid-template-columns:1fr; } }
+  .action-card{
+    border:1px solid rgba(34,48,63,0.14); padding:2rem;
+    background:var(--paper-dim);
+  }
+  .action-card h3{ font-size:1.25rem; }
+  .action-card p{ color:var(--ink-soft); margin-top:0.6rem; font-size:0.95rem; }
+  .btn{
+    display:inline-block; margin-top:1.4rem; padding:0.7rem 1.3rem;
+    background:var(--marigold); color:var(--ink); text-decoration:none;
+    font-family:'IBM Plex Mono',monospace; font-size:0.82rem; letter-spacing:0.03em;
+    border:none; cursor:pointer;
+  }
+  .btn.secondary{ background:transparent; border:1px solid var(--ink); color:var(--ink); }
+
+  /* PARTNERS */
+  .partners{ background:var(--paper-dim); }
+  .partner-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:1.2rem; margin-top:2rem; }
+  .partner-card{ background:var(--paper); border:1px solid rgba(34,48,63,0.1); padding:1.4rem; }
+  .partner-card h4{ font-family:'Fraunces',serif; font-size:1.05rem; }
+  .partner-card p{ font-size:0.85rem; color:var(--ink-soft); margin-top:0.4rem; }
+  .partner-card a{ font-size:0.78rem; font-family:'IBM Plex Mono',monospace; color:var(--indigo); }
+
+  /* IMPACT */
+  .impact{ background:var(--paper); }
+  .impact-row{ display:flex; flex-wrap:wrap; gap:1.4rem; margin-top:2rem; }
+  .impact-item{
+    flex:1; min-width:150px; text-align:center; padding:1.4rem 1rem;
+    border:1px dashed rgba(178,58,46,0.4);
+  }
+  .impact-item .amt{ font-family:'IBM Plex Mono',monospace; color:var(--rule-red); font-weight:600; font-size:1.3rem; }
+  .impact-item .what{ font-size:0.85rem; color:var(--ink-soft); margin-top:0.3rem; }
+
+  footer{
+    background:var(--slate); color:#9FA9A6; text-align:center;
+    padding:2.4rem 1.5rem; font-size:0.85rem;
+  }
+  footer a{ color:var(--marigold); }
+
+  @media (prefers-reduced-motion: no-preference){
+    .reveal{ opacity:0; transform:translateY(16px); transition:opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.in{ opacity:1; transform:none; }
+  }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="notebook reveal in">
+      <span class="eyebrow">#ClassroomsWithoutBooks</span>
+      <h1>One notebook, shared between three kids, is not a resource gap. It's a decision we keep making.</h1>
+      <p class="lede">A student-led project bringing books, supplies, and weekly one-on-one tutoring to children in rural India — built after visiting the villages myself.</p>
+      <span class="margin-note">— for the girl who was still writing in the last quarter-inch of her only notebook</span>
+      <div class="stat-row">
+        <div class="stat"><div class="num">23.4%</div><div class="label">of Grade 3 students can read at grade level</div></div>
+        <div class="stat"><div class="num">96%+</div><div class="label">rural school enrollment — access isn't the problem</div></div>
+        <div class="stat"><div class="num">2</div><div class="label">students I tutor personally, every Saturday</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="story ruled">
+  <div class="wrap margin-rule reveal">
+    <h2>Why this, why me</h2>
+    <p style="margin-top:1rem; color:var(--ink-soft); max-width:56ch;">I've visited rural villages in India more than once. The thing that stayed with me wasn't the poverty — it was how normal everyone treated it. A classroom of forty kids sharing six textbooks wasn't an emergency to them. It was Tuesday.</p>
+    <blockquote>"She was still writing in the last quarter-inch of the last page of the only notebook she owned. She wasn't embarrassed. She was proud she'd made it last the whole year."</blockquote>
+    <div class="cite">— from my journal, Varanasi</div>
+  </div>
+</section>
+
+<section class="data">
+  <div class="wrap reveal">
+    <h2>The gap, in numbers</h2>
+    <div class="data-grid">
+      <div class="data-card">
+        <div class="num">23.4%</div>
+        <div class="desc">of rural Grade 3 students can read a Grade 2-level text.</div>
+        <div class="src">ASER 2024</div>
+      </div>
+      <div class="data-card">
+        <div class="num">1:1</div>
+        <div class="desc">textbook-to-student ratio is common in many rural primary schools — enrollment is high, materials aren't.</div>
+        <div class="src">UDISE+ / ASER 2024</div>
+      </div>
+      <div class="data-card">
+        <div class="num">3x</div>
+        <div class="desc">learning-outcome gap between top and bottom-performing states, even at similar enrollment rates.</div>
+        <div class="src">ASER regional data</div>
+      </div>
+      <div class="data-card">
+        <div class="num">↓</div>
+        <div class="desc">Girls and Dalit/Adivasi children in high-poverty states like Bihar and UP face the steepest drop-off after primary school.</div>
+        <div class="src">NSS educational attainment data</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="causes ruled">
+  <div class="wrap margin-rule reveal">
+    <h2>This isn't bad luck — it's structural</h2>
+    <ul>
+      <li><b>Supply, not access:</b> schools exist and kids attend, but books, paper, and trained teachers don't reach every classroom.</li>
+      <li><b>Distance and cost:</b> secondary schools are often miles away, pricing out families who need kids working or at home instead.</li>
+      <li><b>Compounding disadvantage:</b> gender, caste, and state-level poverty stack on top of the base gap — it isn't evenly distributed.</li>
+      <li><b>75 years of partial fixes:</b> enrollment policy solved attendance. It never solved what happens once a child is sitting in the room.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="reflection">
+  <div class="wrap reveal">
+    <h2>What I keep coming back to</h2>
+    <p style="margin-top:1rem;">I can't fix a national education system. I can make sure two specific kids get one hour of real, focused attention every Saturday, and I can get a few hundred more notebooks into a few hundred more hands. That's small. It's also not nothing.</p>
+    <span class="hand">"This project isn't about raising money — it's about showing up. Every week."</span>
+  </div>
+</section>
+
+<section class="actions">
+  <div class="wrap reveal">
+    <h2>What this project actually does</h2>
+    <div class="action-grid">
+      <div class="action-card">
+        <h3>Weekly virtual tutoring</h3>
+        <p>Every Saturday, I teach math and English over video call to two children from my father's home village. Sessions are logged — what we covered, what clicked, what's still hard — so progress is real and trackable, not just a claim.</p>
+      </div>
+      <div class="action-card">
+        <h3>Supply drive + fundraiser</h3>
+        <p>Funds raised go directly to Pratham and Room to Read — no middle step, no handling by me. $500 goal, tracked publicly, tied to concrete outcomes (see below).</p>
+        <a class="btn" href="#donate">Donate</a>
+      </div>
+      <div class="action-card">
+        <h3>#ClassroomsWithoutBooks</h3>
+        <p>A social campaign built around the real statistics on this page — not vague awareness, but specific numbers people can act on, linking straight back to the donation page.</p>
+      </div>
+      <div class="action-card">
+        <h3>This website</h3>
+        <p>One place that holds the story, the data, and the ask together — so anyone can go from "that's sad" to "here's exactly what ten dollars does" in under a minute.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="impact" id="donate">
+  <div class="wrap reveal">
+    <h2>What your donation actually buys</h2>
+    <div class="impact-row">
+      <div class="impact-item"><div class="amt">$5</div><div class="what">a full set of notebooks and pencils for one child, for a term</div></div>
+      <div class="impact-item"><div class="amt">$20</div><div class="what">a set of grade-level readers for a classroom shelf</div></div>
+      <div class="impact-item"><div class="amt">$50</div><div class="what">a term of school supplies for an entire small classroom</div></div>
+      <div class="impact-item"><div class="amt">$100+</div><div class="what">contributes directly to Pratham/Room to Read program costs in-region</div></div>
+    </div>
+    <p style="margin-top:1.6rem; font-size:0.85rem; color:var(--ink-soft);">100% of donations route directly to the partner NGOs below — I never handle the funds.</p>
+  </div>
+</section>
+
+<section class="partners">
+  <div class="wrap reveal">
+    <h2>Who the funds go to</h2>
+    <p style="color:var(--ink-soft); font-size:0.9rem; margin-bottom:0.4rem;">100% of donations are split between these two organizations.</p>
+    <div class="partner-grid">
+      <div class="partner-card">
+        <h4>Pratham</h4>
+        <p>Publishes ASER, the same report this project's data comes from. Reaches ~7M children/year across 26 states.</p>
+        <a href="https://www.pratham.org/" target="_blank" rel="noopener">pratham.org →</a>
+      </div>
+      <div class="partner-card">
+        <h4>Room to Read</h4>
+        <p>Focused specifically on literacy and girls' education — the two steepest parts of this gap.</p>
+        <a href="https://www.roomtoread.org/" target="_blank" rel="noopener">roomtoread.org →</a>
+      </div>
+    </div>
+    <p style="color:var(--ink-soft); font-size:0.9rem; margin:2rem 0 0.4rem;">Doing related work worth knowing about (not funded by this campaign):</p>
+    <div class="partner-grid">
+      <div class="partner-card">
+        <h4>eVidyaloka</h4>
+        <p>Runs volunteer virtual tutoring for rural Indian schools — the same model I'm already doing on a smaller scale.</p>
+        <a href="https://www.evidyaloka.org/" target="_blank" rel="noopener">evidyaloka.org →</a>
+      </div>
+      <div class="partner-card">
+        <h4>CRY (Child Rights and You)</h4>
+        <p>India's most established child-rights NGO, working across education, health, and protection in 19+ states.</p>
+        <a href="https://www.cry.org/" target="_blank" rel="noopener">cry.org →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>#ClassroomsWithoutBooks — a student project, built to actually be used, not just presented.</p>
+  <p style="margin-top:0.6rem;">Data: ASER 2024, UDISE+, NSS. Funded partners: Pratham, Room to Read. Also featured: eVidyaloka, CRY.</p>
+</footer>
+
+<script>
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); } });
+  }, {threshold:0.15});
+  revealEls.forEach(el=>io.observe(el));
+</script>
+
+</body>
+</html>
