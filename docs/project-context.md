@@ -34,11 +34,18 @@ Vyom Kumar, a senior at Moreau Catholic High School, is running ClassroomsWithou
 - Fundraiser copy (`fundraiser-copy.md`) — one-line pitch, short and long GoFundMe descriptions in Vyom's voice.
 - Logo/brand assets — airmail-themed stamp mark, circular profile icon, favicon set, all matching the site's palette (`--paper:#F3EEDF`, `--red:#B5342B`, `--blue:#254672`, `--ink:#241F1A`).
 
+## Sync with claude.ai Project chat
+
+- This repo's `CLAUDE.md` and `docs/` are kept current from the ClassroomsWithoutBooks claude.ai Project chat via a connected GitHub integration (Composio), which commits directly to `main` — no manual patch/zip step needed as of Sep 20, 2026.
+- When new durable context, decisions, or constraints come up in that chat, they get written here so Claude Code CLI sessions (which auto-load `CLAUDE.md` on start) stay current without manual copying.
+
 ## Open items (as of Sep 20, 2026)
 
-- Push the redesigned website (About section, favicon, new logo) to GitHub — confirm this is done before treating the live site as current.
+- Redesigned website (About section, favicon, new logo, brand assets) is pushed to GitHub and live on `main` as of Sep 20, 2026.
 - Vyom to write his own About-section bio (currently a placeholder).
 - Aayush to write his About-section bio (currently a placeholder).
 - Confirm GoFundMe identity/payout verification is complete (fundraiser is live, launched Sep 8, 2026, $0 raised as of Sep 20).
 - Instagram and TikTok accounts not yet confirmed set up.
 - NGO outreach emails to Pratham and Room to Read not yet confirmed sent.
+- Content/copy review requested but specifics not yet given.
+- Custom domain decision pending (buy now vs. stick with GitHub Pages URL).
