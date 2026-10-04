@@ -14,7 +14,7 @@ This campaign funds books and supplies through two organizations doing this work
 
 It's not just a fundraiser. Every Saturday, I personally tutor two children from my dad's home village in math and English over video call. This is something I'm already doing, not a promise for later.
 
-**Goal: $500**
+**Goal: $5,000**
 - $5 = a full set of notebooks and pencils for one child, for a term
 - $20 = grade-level readers for a classroom shelf
 - $50 = a term of supplies for an entire small classroom
@@ -37,6 +37,6 @@ If you read this far: even $5 does something concrete. Thank you.
 
 ## Notes
 
-- Goal is $500, matching the official capstone proposal. Do not change to a different round number.
+- Goal is $5,000 (raised from the original $500 capstone target on Oct 3, 2026, per Vyom). Do not change to a different number without being told to.
 - Recipients: Pratham, Room to Read only.
 - Link the campaign website in the first line of any description, not buried at the bottom.
