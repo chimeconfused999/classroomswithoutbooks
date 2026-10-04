@@ -9,7 +9,7 @@ This repo is the website and supporting files for ClassroomsWithoutBooks, a More
 
 ## Rules for this repo
 
-- Fundraiser goal is **$500**. Never change this to a different number without being told to.
+- Fundraiser goal is **$5,000** (raised from the original $500 capstone target on Oct 3, 2026, per Vyom). Never change this to a different number without being told to.
 - Only **Pratham** and **Room to Read** receive donated funds. eVidyaloka and CRY India are profiled but not funded — don't blur this distinction in copy.
 - Never invent quotes, statistics, or biographical details for Vyom or Aayush. Use a clearly marked placeholder instead.
 - Only cite statistics from ASER 2024, UDISE+, or NSS unless a new source is explicitly verified.
