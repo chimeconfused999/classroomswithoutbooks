@@ -6,15 +6,15 @@ Vyom Kumar, a senior at Moreau Catholic High School, is running ClassroomsWithou
 
 ## Capstone proposal specifics (source of truth for scope)
 
-- Fundraising goal: minimum $500, 100% to Pratham Education Foundation and Room to Read.
+- Fundraising goal: minimum $5,000 (raised from the original $500 capstone target on Oct 3, 2026), 100% to Pratham Education Foundation and Room to Read.
 - Secondary partners profiled on the site (not funded): eVidyaloka and CRY India.
 - Platforms: Instagram and TikTok, hashtag #ClassroomsWithoutBooks.
 - Timeline: Research (Apr-May 2026), Planning (May-June 2026), Execution (June-Dec 2026), Reflection (Dec 2026).
-- Success targets: $500 raised, 1,000+ social impressions, 500+ unique website visitors in month one.
+- Success targets: $5,000 raised, 1,000+ social impressions, 500+ unique website visitors in month one.
 
 ## Hard constraints (do not violate)
 
-- Fundraiser goal is **$500** (matches the official capstone proposal), not a higher round number.
+- Fundraiser goal is **$5,000** (raised from the original $500 capstone proposal figure on Oct 3, 2026). Do not change again without being told to.
 - Only **Pratham** and **Room to Read** receive donated funds. eVidyaloka and CRY India are profiled on the site as related organizations but are not funded by this campaign.
 - The GoFundMe fundraiser is live: https://www.gofundme.com/f/classroomswithoutbooks-books-and-supplies-for-rural-india
 - The website repo is at github.com/chimeconfused999/classroomswithoutbooks, hosted via GitHub Pages, file is index.html.
@@ -39,13 +39,14 @@ Vyom Kumar, a senior at Moreau Catholic High School, is running ClassroomsWithou
 - This repo's `CLAUDE.md` and `docs/` are kept current from the ClassroomsWithoutBooks claude.ai Project chat via a connected GitHub integration (Composio), which commits directly to `main` — no manual patch/zip step needed as of Sep 20, 2026.
 - When new durable context, decisions, or constraints come up in that chat, they get written here so Claude Code CLI sessions (which auto-load `CLAUDE.md` on start) stay current without manual copying.
 
-## Open items (as of Sep 20, 2026)
+## Open items (as of Oct 3, 2026)
 
-- Redesigned website (About section, favicon, new logo, brand assets) is pushed to GitHub and live on `main` as of Sep 20, 2026.
+- Redesigned website (About section, favicon, new logo, brand assets) is pushed to GitHub and live on `main`.
+- Fundraiser goal raised from $500 to $5,000 on Oct 3, 2026; GoFundMe page itself must be updated manually by Vyom (no GoFundMe API/connector exists).
 - Vyom to write his own About-section bio (currently a placeholder).
 - Aayush to write his About-section bio (currently a placeholder).
-- Confirm GoFundMe identity/payout verification is complete (fundraiser is live, launched Sep 8, 2026, $0 raised as of Sep 20).
+- Confirm GoFundMe identity/payout verification is complete (fundraiser is live, launched Sep 8, 2026).
 - Instagram and TikTok accounts not yet confirmed set up.
-- NGO outreach emails to Pratham and Room to Read not yet confirmed sent.
+- Outreach emails drafted (not yet sent) to Pratham (info@prathamusa.org) and Room to Read (volunteer@roomtoread.org) asking about preferred donation routing and any guidelines for student fundraisers.
 - Content/copy review requested but specifics not yet given.
 - Custom domain decision pending (buy now vs. stick with GitHub Pages URL).
